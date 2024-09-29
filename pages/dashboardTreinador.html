@@ -42,7 +42,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/cadastrarTreinamento.html">
+          <a class="nav-link " href="../pages/treinamento.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -70,16 +70,17 @@
         </li>
       </ul>
     </div>
-    <div class="sidenav-footer mx-3 "></div>
+    <div class="sidenav-footer mx-3 ">
       <div class="card card-plain shadow-none" id="sidenavCard">
         <img class="w-50 mb-2 mx-auto" src="../assets/img/bot-de-bate-papo.png" alt="sidebar_illustration">
         <div class="card-body text-center p-3 w-100 pt-0">
           <div class="docs-info">
             <h6 class="mb-0">Precisa de ajuda?</h6>
-            <p class="text-xs font-weight-bold mb-0">Fale com o EuroBot. Basta clicar no ícone localizado no lado direito da página.</p>
+            <p class="text-xs font-weight-bold mb-0">O EuroBot pode te ajudar.</p>
           </div>
         </div>
       </div>
+      <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn btn-dark btn-sm w-100 mb-3">Falar com EuroBot</a>
     </div>
   </aside>
   <main class="main-content position-relative border-radius-lg ">
@@ -115,6 +116,7 @@
               </a>
             </li>
           </ul>
+          <button class="btn btn-danger" id="botao-encerrar-sessao">Encerrar Sessão</button>
         </div>
       </div>
     </nav>
@@ -274,6 +276,9 @@
     </div>
   </main>
   <div class="fixed-plugin">
+    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+      <i class="fa fa-cog py-2"> </i>
+    </a>
     <div class="card shadow-lg">
       <div class="card-header pb-0 pt-3 ">
         <div class="float-start">
@@ -322,6 +327,7 @@
       </div>
     </div>
   </div>
+  <script src="../assets/js/dashboardTreinador.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -436,6 +442,7 @@
       document.head.appendChild(t);
     });
   </script>
+  <script src="../assets/js/logout-script.js"></script>
 </body>
 
 </html>

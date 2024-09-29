@@ -1,26 +1,3 @@
-function get(url) {
-    
-    return fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro na requisição: ' + response.status);
-            }
-            return response.json();
-        })
-        .catch(error => {
-            console.error('Erro ao buscar dados:', error);
-        });
-}
-
-async function main() {
-    
-    const url = 'http://127.0.0.1:8080/treinamentos'; // Adicionei http:// no início do URL
-    await get(url);
- 
-}
-
-main();
-
 document.getElementById('form_login').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
@@ -43,7 +20,7 @@ document.getElementById('form_login').addEventListener('submit', function(event)
         const msg = document.getElementById('mensagem');
             if (!response.ok) {
                 if(response.status === 403){
-                    msg.style.display = 'block'; 
+                    msg.classList.toggle('hidden'); 
                 }else{
                     throw new Error('Erro na requisição: ' + response.statusText);
                 }

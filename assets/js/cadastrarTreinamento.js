@@ -81,8 +81,11 @@ document.getElementById('form_treinamento').addEventListener('submit', function(
         body: JSON.stringify(data)
       })
       .then(response => {
-        console.log(response);
-        return response.json();
+        if(response.status == 201){
+          alert("Treinamento cadastrado com sucesso!")
+          console.log(response);
+          window.location.href = './treinamento.html';  
+        }
       })
       .then(data => {
         console.log(data);

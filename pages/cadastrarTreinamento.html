@@ -82,15 +82,18 @@
         </div>
         <div class="sidenav-footer mx-3 ">
             <div class="card card-plain shadow-none" id="sidenavCard">
-              <img class="w-50 mb-2 mx-auto" src="../assets/img/bot-de-bate-papo.png" alt="sidebar_illustration">
-              <div class="card-body text-center p-3 w-100 pt-0">
-                <div class="docs-info">
-                  <h6 class="mb-0">Precisa de ajuda?</h6>
-                  <p class="text-xs font-weight-bold mb-0">Fale com o EuroBot. Basta clicar no ícone localizado no lado direito da página.</p>
+                <img class="w-50 mx-auto mb-2" src="../assets/img/bot-de-bate-papo.png"
+                    alt="sidebar_illustration">
+                <div class="card-body text-center p-3 w-100 pt-0">
+                    <div class="docs-info">
+                        <h6 class="mb-0">Precisa de ajuda?</h6>
+                        <p class="text-xs font-weight-bold mb-0">O EuroBot pode te ajudar.</p>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank"
+                class="btn btn-dark btn-sm w-100 mb-3">Falar com EuroBot</a>
+        </div>
     </aside>
     <main class="main-content position-relative border-radius-lg ">
         <!-- Navbar -->
@@ -131,6 +134,7 @@
                     </ul>
                     </li>
                     </ul>
+                    <button class="btn btn-danger" id="botao-encerrar-sessao">Encerrar Sessão</button>
                 </div>
             </div>
         </nav>
@@ -142,29 +146,29 @@
                         <div class="card-header pb-0">
                             <h6>Cadastrar Treinamentos</h6>
                         </div>
-                        <div class="card-body">
+                        <form id="form_treinamento" class="card-body">
                             <p class="text-uppercase text-sm">Informações do Treinamento</p>
                             <div class="row">
                               <div class="col-md-6">
                                 <div class="form-group">
-                                  <label for="example-text-input" class="form-control-label">Nome do Treinamento</label>
-                                  <input class="form-control" type="text" placeholder="Salada de Frutas" required>
+                                  <label for="titulo" class="form-control-label">Nome do Treinamento</label>
+                                  <input id="titulo" class="form-control" type="text" placeholder="Ex: A Importancia do LGPD nas Organizações" required>
                                 </div>
                               </div>
                               <div class="col-md-6">
                                 <div class="form-group">
-                                  <label for="example-text-input" class="form-control-label">Tipo</label>
-                                  <select class="form-select" aria-label="Default select example">
+                                  <label for="tipo" class="form-control-label">Tipo</label>
+                                  <select id="tipo" class="form-select" aria-label="Default select example">
                                     <option selected>Escolha o tipo do treinamento</option>
-                                    <option value="1">Obrigatório</option>
-                                    <option value="2">Opcional</option>                                    
+                                    <option value="OBRIGATORIO">Obrigatório</option>
+                                    <option value="OPCIONAL">Opcional</option>                                    
                                   </select>
                                 </div>
                               </div>
                               <div class="col-md-6">
                                 <div class="form-group">
-                                  <label for="example-text-input" class="form-control-label">Departamentos</label>
-                                  <select class="form-select" multiple aria-label="Multiple select example">
+                                  <label for="departamentos" class="form-control-label">Departamentos</label>
+                                  <select id="departamentos" class="form-select" multiple aria-label="Multiple select example">
                                     <option selected class="mb-1">Escolha um ou mais departamentos</option>
                                     <option value="1">Recursos Humanos</option>
                                     <option value="2">Tecnologia</option>
@@ -175,22 +179,28 @@
                               </div>
                               <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-                                    <textarea class="form-control" style="resize: none; height: 100px;" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <label for="descricao" class="form-label">Descrição</label>
+                                    <textarea id="descricao" class="form-control" style="resize: none; height: 100px;" id="exampleFormControlTextarea1" rows="3"></textarea>
                                   </div>
                               </div>
                               <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Conteúdo do Treinamento</label>
-                                <textarea class="form-control" style="height: 220px; resize: none;" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label for="conteudo" class="form-label">Conteúdo do Treinamento</label>
+                                <textarea class="form-control" style="height: 220px; resize: none;" id="conteudo" rows="3"></textarea>
+                              </div>
+                              <div class="col-md-6 mx-auto">
+                                <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Cadastrar</button>
                               </div>
                             </div>
-                          </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </main>
     <div class="fixed-plugin">
+        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="fa fa-cog py-2"> </i>
+        </a>
         <div class="card shadow-lg">
             <div class="card-header pb-0 pt-3 ">
                 <div class="float-start">
@@ -250,6 +260,7 @@
     </div>
     </div>
     <!--   Core JS Files   -->
+    <script src="../assets/js/cadastrarTreinamento.js"></script>
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -280,6 +291,7 @@
           document.head.appendChild(t);
         });
       </script>
+      <script src="../assets/js/logout-script.js"></script>
 </body>
 
 </html>

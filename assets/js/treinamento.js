@@ -9,6 +9,7 @@ function loadTreinamentos(){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
         }
     }).then(res => { return res.json() })
         .then(data => {

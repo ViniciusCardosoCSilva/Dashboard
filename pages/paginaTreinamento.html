@@ -71,15 +71,18 @@
         </div>
         <div class="sidenav-footer mx-3 ">
             <div class="card card-plain shadow-none" id="sidenavCard">
-              <img class="w-50 mb-2 mx-auto" src="../assets/img/bot-de-bate-papo.png" alt="sidebar_illustration">
-              <div class="card-body text-center p-3 w-100 pt-0">
-                <div class="docs-info">
-                  <h6 class="mb-0">Precisa de ajuda?</h6>
-                  <p class="text-xs font-weight-bold mb-0">Fale com o EuroBot. Basta clicar no ícone localizado no lado direito da página.</p>
+                <img class="w-50 mx-auto" src="../assets/img/illustrations/icon-documentation.svg"
+                    alt="sidebar_illustration">
+                <div class="card-body text-center p-3 w-100 pt-0">
+                    <div class="docs-info">
+                        <h6 class="mb-0">Precisa de ajuda?</h6>
+                        <p class="text-xs font-weight-bold mb-0">O EuroBot pode te ajudar.</p>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank"
+                class="btn btn-dark btn-sm w-100 mb-3">Falar com EuroBot</a>
+        </div>
     </aside>
     <main class="main-content position-relative border-radius-lg ">
         <!-- Navbar -->
@@ -120,6 +123,7 @@
                     </ul>
                     </li>
                     </ul>
+                    <button class="btn btn-danger" id="botao-encerrar-sessao">Encerrar Sessão</button>
                 </div>
             </div>
         </nav>
@@ -271,6 +275,9 @@
 
     </main>
     <div class="fixed-plugin">
+        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="fa fa-cog py-2"> </i>
+        </a>
         <div class="card shadow-lg">
             <div class="card-header pb-0 pt-3 ">
                 <div class="float-start">
@@ -330,6 +337,7 @@
     </div>
     </div>
     <!--   Core JS Files   -->
+    <script src="../assets/js/paginaTreinamento.js"></script>
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -360,6 +368,6 @@
           document.head.appendChild(t);
         });
       </script>
+      <script src="../assets/js/logout-script.js"></script>
 </body>
-
 </html>

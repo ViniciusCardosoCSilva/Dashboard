@@ -71,17 +71,19 @@
         </li>
       </ul>
     </div>
-    <div class="sidenav-footer mx-3 "></div>
+    <div class="sidenav-footer mx-3 ">
       <div class="card card-plain shadow-none" id="sidenavCard">
-        <img class="w-50 mb-2 mx-auto" src="../assets/img/bot-de-bate-papo.png" alt="sidebar_illustration">
+        <img class="w-50 mx-auto mb-2" src="../assets/img/bot-de-bate-papo.png" alt="sidebar_illustration">
         <div class="card-body text-center p-3 w-100 pt-0">
           <div class="docs-info">
             <h6 class="mb-0">Precisa de ajuda?</h6>
-            <p class="text-xs font-weight-bold mb-0">Fale com o EuroBot. Basta clicar no ícone localizado no lado direito da página.</p>
+            <p class="text-xs font-weight-bold mb-0">O EuroBot pode te ajudar.</p>
           </div>
         </div>
       </div>
-    </div>     
+      <a href="" target="_blank"
+        class="btn btn-dark btn-sm w-100 mb-3">Falar com EuroBot</a>
+    </div>
   </aside>
   <main class="main-content position-relative border-radius-lg ">
     
@@ -121,6 +123,7 @@
           </ul>
           </li>
           </ul>
+          <button class="btn btn-danger" id="botao-encerrar-sessao">Encerrar Sessão</button>
         </div>
       </div>
     </nav>
@@ -292,7 +295,7 @@
                         </div>
                         <div class="mb-3">
                           <label for="inpunt-senha-funcionario" class="col-form-label">Senha</label>
-                          <input type="text" class="form-control" id="input-senha-funcionario">
+                          <input type="password" class="form-control" id="input-senha-funcionario">
                           <div class="text-danger form-label hidden" id="senha-obrigatorio-funcionario"></div>
                       </div>
                       <div class="modal-footer">
@@ -333,6 +336,9 @@
     </div>
   </main>
   <div class="fixed-plugin">
+    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+      <i class="fa fa-cog py-2"> </i>
+    </a>
     <div class="card shadow-lg">
       <div class="card-header pb-0 pt-3 ">
         <div class="float-start">
@@ -417,6 +423,7 @@
       document.head.appendChild(t);
     });
   </script>
+  <script src="../assets/js/logout-script.js"></script>
 </body>
 
 </html>
