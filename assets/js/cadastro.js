@@ -176,6 +176,7 @@ async function getAllTreinadores() {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
         }
     })
 
@@ -262,6 +263,7 @@ async function getAllFuncionarios() {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
         }
     })
 
@@ -349,6 +351,7 @@ async function getAllDepartamentos() {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
         }
     })
 
@@ -387,7 +390,7 @@ async function insertTreinador(user) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // 'Authorization': 'Bearer ${token}'
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
         },
         body: data
     });
@@ -395,6 +398,7 @@ async function insertTreinador(user) {
     if(request.status == 201){
         const result = await request.json();
         listAllTreinadores();
+        alert('Cadastrado com Sucesso!');
     }
     console.log(result);
 }
@@ -414,11 +418,15 @@ async function insertFuncionario(user) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // 'Authorization': 'Bearer ${token}'
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
         },
         body: data
     });
-
-    const result = await request.json();
+    
+    if(request.status == 201){
+        const result = await request.json();
+        listAllFuncionarios();
+        alert('Cadastrado com Sucesso!');
+    }
     console.log(result);
 }
