@@ -136,7 +136,7 @@
               <h6>Cadastrar Treinadores</h6>
               
               <!-- Modal Treinador Insert Start -->
-              <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#TreinadorModal" data-bs-whatever="@mdo" >Cadastrar Treinadores</button>
+              <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#TreinadorModal" data-bs-whatever="@mdo" id="btn-cadastro-treinadores">Cadastrar Treinadores</button>
               <div class="modal fade" id="TreinadorModal" tabindex="-1" aria-labelledby="TreinadorModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -145,35 +145,39 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form id="form-cadastro-treinador">
+                      <form id="form-cadastro-treinador" name="form-cadastro-treinador">
                         <div class="mb-3">
                           <label for="input-nome-treinador" class="col-form-label">Nome</label>
                           <input type="text" class="form-control" id="input-nome-treinador" minlength="3">
-                          <div class="text-danger form-label hidden" id="nome-obrigatorio"></div>
+                          <div class="text-danger form-label hidden" id="nome-obrigatorio-treinador"></div>
                         </div>
                         <div class="mb-3">
-                          <label for="input-role-treinador" class="col-form-label" id="label-modal">Role</label>
-                          <input type="text" class="form-control" id="input-role-treinador">
-                          <div class="text-danger form-label hidden" id="role-obrigatorio"></div>
+                          <label for="input-role-treinador" class="col-form-label" id="label-modal">Permissão</label>
+                          <select class="form-select" id="select-role-treinador">
+                            <option selected disabled>Escolha uma Permissão</option>
+                            <option value = "TREINADOR"> Treinador(a)</option>
+                            <option value = "ADMIN" >Admnistrador(a)</option>
+                          </select>
+                          <div class="text-danger form-label hidden" id="role-obrigatorio-treinador"></div>
                           </div>
                           <div class="mb-3">
                             <label for="input-cpf-treinador" class="col-form-label">CPF</label>
                             <input type="text" class="form-control" id="input-cpf-treinador" maxlength="11">
-                            <div class="text-danger form-label hidden" id="cpf-obrigatorio"></div>
+                            <div class="text-danger form-label hidden" id="cpf-obrigatorio-treinador"></div>
                         </div>
                         <div class="mb-3">
                           <label for="input-email-treinador" class="col-form-label">Email</label>
                           <input type="text" class="form-control" id="input-email-treinador">
-                          <div class="text-danger form-label hidden" id="email-obrigatorio"></div>
+                          <div class="text-danger form-label hidden" id="email-obrigatorio-treinador"></div>
                         </div>
                         <div class="mb-3">
                           <label for="input-senha-treinador" class="col-form-label">Senha</label>
                           <input type="password" class="form-control" id="input-senha-treinador">
-                          <div class="text-danger form-label hidden" id="senha-obrigatorio"></div>
+                          <div class="text-danger form-label hidden" id="senha-obrigatorio-treinador"></div>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                          <button type="submit" class="btn btn-primary" id="btn-cadastro-treinadores">Enviar</button>
+                          <button type="submit" class="btn btn-primary" id="btn-cadastro-treinadores-form">Enviar</button>
                         </div>
                       </form>
                     </div>
@@ -256,7 +260,7 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Cadastrar Usuários</h6>
-              <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#FuncionarioModal" data-bs-whatever="@mdo">Cadastrar Usuários</button>
+              <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#FuncionarioModal" data-bs-whatever="@mdo" id="btn-cadastro-funcionarios">Cadastrar Usuários</button>
               <div class="modal fade" id="FuncionarioModal" tabindex="-1" aria-labelledby="FuncionarioModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -265,32 +269,39 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      <form id="form-cadastro-funcionario">
                         <div class="mb-3">
-                          <label for="input-nome-usuario" class="col-form-label">Nome</label>
-                          <input type="text" class="form-control" id="input-nome-usuario">
+                          <label for="input-nome-funcionario" class="col-form-label">Nome</label>
+                          <input type="text" class="form-control" id="input-nome-funcionario">
+                          <div class="text-danger form-label hidden" id="nome-obrigatorio-funcionario"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="input-departamento-usuario" class="col-form-label">Departamento</label>
-                            <input type="text" class="form-control" id="input-departamento-usuario">
+                            <label for="input-departamento-funcionario" class="col-form-label">Departamento</label>
+                            <select class="form-select" id="select-departamento-funcionario">
+                              <option selected disabled>Escolha um departamento</option>
+                            </select>
+                            <div class="text-danger form-label hidden" id="departamento-obrigatorio-funcionario"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="input-cpf-usuario" class="col-form-label">CPF</label>
-                            <input type="text" class="form-control" id="input-cpf-usuario">
+                            <label for="input-cpf-funcionario" class="col-form-label">CPF</label>
+                            <input type="text" class="form-control" id="input-cpf-funcionario">
+                            <div class="text-danger form-label hidden" id="cpf-obrigatorio-funcionario"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="input-email-usuario" class="col-form-label">Email</label>
-                            <input type="text" class="form-control" id="input-email-usuario">
+                            <label for="input-email-funcionario" class="col-form-label">Email</label>
+                            <input type="text" class="form-control" id="input-email-funcionario">
+                            <div class="text-danger form-label hidden" id="email-obrigatorio-funcionario"></div>
                         </div>
                         <div class="mb-3">
-                          <label for="inpunt-senha-usuario" class="col-form-label">Senha</label>
-                          <input type="text" class="form-control" id="inpunt-senha-usuario">
+                          <label for="inpunt-senha-funcionario" class="col-form-label">Senha</label>
+                          <input type="text" class="form-control" id="input-senha-funcionario">
+                          <div class="text-danger form-label hidden" id="senha-obrigatorio-funcionario"></div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary" id="btn-cadastro-funcionarios-form">Enviar</button>
                       </div>
                       </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                      <button type="button" class="btn btn-primary" id="btn-cadastro-usuarios">Enviar</button>
                     </div>
                   </div>
                 </div>
