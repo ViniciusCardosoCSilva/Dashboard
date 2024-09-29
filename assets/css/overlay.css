@@ -1,4 +1,25 @@
 .msg {
+
+    display: block;
+    font-size: 1.0rem;
+    font-weight: 500;
+    width: 100%;
+    overflow: hidden;
+    color: black;
+    white-space: nowrap;
+    box-shadow: 0.1rem 0 0 000000;
+    animation: mark .5s step-end infinite,
+               write 6s
+
+}
+
+@keyframes write {0% {width: 0;}}
+@keyframes mark {50% {box-shadow: 1rem 0 0 transparent;}}
+
+
+
+
+/* .msg {
     display: block;
     font-size: 1.0rem;
     font-weight: 500;
@@ -13,4 +34,4 @@
 }
 
 @keyframes write {0% {width: 0;}}
-@keyframes mark {50% {box-shadow: 1rem 0 0 transparent;} }
+@keyframes mark {50% {box-shadow: 1rem 0 0 transparent;} } */

@@ -70,17 +70,16 @@
         </li>
       </ul>
     </div>
-    <div class="sidenav-footer mx-3 ">
+    <div class="sidenav-footer mx-3 "></div>
       <div class="card card-plain shadow-none" id="sidenavCard">
         <img class="w-50 mb-2 mx-auto" src="../assets/img/bot-de-bate-papo.png" alt="sidebar_illustration">
         <div class="card-body text-center p-3 w-100 pt-0">
           <div class="docs-info">
             <h6 class="mb-0">Precisa de ajuda?</h6>
-            <p class="text-xs font-weight-bold mb-0">O EuroBot pode te ajudar.</p>
+            <p class="text-xs font-weight-bold mb-0">Fale com o EuroBot. Basta clicar no ícone localizado no lado direito da página.</p>
           </div>
         </div>
       </div>
-      <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn btn-dark btn-sm w-100 mb-3">Falar com EuroBot</a>
     </div>
   </aside>
   <main class="main-content position-relative border-radius-lg ">
@@ -275,9 +274,6 @@
     </div>
   </main>
   <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i class="fa fa-cog py-2"> </i>
-    </a>
     <div class="card shadow-lg">
       <div class="card-header pb-0 pt-3 ">
         <div class="float-start">
@@ -427,6 +423,19 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "cd048117-a901-4504-94a0-525dcec7d54d", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "aa414c37-6c99-48b3-a6a8-b7114d7f7cff", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
 </body>
 
 </html>
