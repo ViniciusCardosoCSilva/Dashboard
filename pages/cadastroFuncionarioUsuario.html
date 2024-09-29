@@ -17,6 +17,7 @@
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="../assets/css/cadastro.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
@@ -85,6 +86,7 @@
     </div>
   </aside>
   <main class="main-content position-relative border-radius-lg ">
+    
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur"
       data-scroll="false">
@@ -125,47 +127,102 @@
       </div>
     </nav>
     <!-- End Navbar -->
+
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Cadastrar Treinadores</h6>
-              <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Cadastrar Treinadores</button>
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              
+              <!-- Modal Treinador Insert Start -->
+              <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#TreinadorModal" data-bs-whatever="@mdo" >Cadastrar Treinadores</button>
+              <div class="modal fade" id="TreinadorModal" tabindex="-1" aria-labelledby="TreinadorModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Treinador</h1>
+                      <h1 class="modal-title fs-5" id="TreinadorModalLabel">Cadastrar Treinador</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                      <form id="form-cadastro-treinador">
                         <div class="mb-3">
-                          <label for="recipient-name" class="col-form-label">Nome</label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <label for="input-nome-treinador" class="col-form-label">Nome</label>
+                          <input type="text" class="form-control" id="input-nome-treinador" minlength="3">
+                          <div class="text-danger form-label hidden" id="nome-obrigatorio"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Departamento</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                          <label for="input-role-treinador" class="col-form-label" id="label-modal">Role</label>
+                          <input type="text" class="form-control" id="input-role-treinador">
+                          <div class="text-danger form-label hidden" id="role-obrigatorio"></div>
+                          </div>
+                          <div class="mb-3">
+                            <label for="input-cpf-treinador" class="col-form-label">CPF</label>
+                            <input type="text" class="form-control" id="input-cpf-treinador" maxlength="11">
+                            <div class="text-danger form-label hidden" id="cpf-obrigatorio"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">CPF</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                          <label for="input-email-treinador" class="col-form-label">Email</label>
+                          <input type="text" class="form-control" id="input-email-treinador">
+                          <div class="text-danger form-label hidden" id="email-obrigatorio"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Email</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                          <label for="input-senha-treinador" class="col-form-label">Senha</label>
+                          <input type="password" class="form-control" id="input-senha-treinador">
+                          <div class="text-danger form-label hidden" id="senha-obrigatorio"></div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                          <button type="submit" class="btn btn-primary" id="btn-cadastro-treinadores">Enviar</button>
                         </div>
                       </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                      <button type="button" class="btn btn-primary">Enviar</button>
                     </div>
                   </div>
                 </div>
               </div>    
+              <!-- Modal Treinador Insert End -->
+
+               <!-- Modal Treinador Update Start -->
+               <!-- <button type="button" class="btn btn-primary mt-3" >Cadastrar Treinadores</button> -->
+               <div class="modal fade" id="EditTreinadorModal" tabindex="-1" aria-labelledby="EditTreinadorModalLabel" aria-hidden="true">
+                 <div class="modal-dialog">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h1 class="modal-title fs-5" id="EditTreinadorModalLabel">Cadastrar Treinador</h1>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                     </div>
+                     <div class="modal-body">
+                       <form>
+                         <div class="mb-3">
+                           <label for="input-edit-nome-treinador" class="col-form-label">Nome</label>
+                           <input type="text" class="form-control" id="input-edit-nome-treinador">
+                         </div>
+                         <div class="mb-3">
+                             <label for="input-edit-role-treinador" class="col-form-label" id="label-modal">Role</label>
+                             <input type="text" class="form-control" id="input-edit-role-treinador">
+                         </div>
+                         <div class="mb-3">
+                             <label for="input-edit-cpf-treinador" class="col-form-label">CPF</label>
+                             <input type="text" class="form-control" id="input-edit-cpf-treinador">
+                         </div>
+                         <div class="mb-3">
+                             <label for="input-edit-email-treinador" class="col-form-label">Email</label>
+                             <input type="text" class="form-control" id="input-edit-email-treinador">
+                         </div>
+                         <div class="mb-3">
+                           <label for="input-edit-senha-treinador" class="col-form-label">Senha</label>
+                           <input type="text" class="form-control" id="input-edit-senha-treinador">
+                         </div>
+                       </form>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                       <button type="button" class="btn btn-primary">Enviar</button>
+                     </div>
+                   </div>
+                 </div>
+               </div>    
+               <!-- Modal Treinador Update End -->
             </div>
 
             <div class="card-body px-0 pt-0 pb-2">
@@ -183,57 +240,8 @@
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"></h6>
-                            <p class="text-xs text-secondary mb-0">Mike Wazowski</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>                    
-                        <p class="text-xs text-secondary mb-0">Recursos Humanos</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">000.000.000-01</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">mikew@infoquik.com</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="paginaTreinamento.html" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                          data-original-title="Edit user">
-                          Editar
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                        <td>
-                          <div class="d-flex px-2 py-1">
-                            <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-sm"></h6>
-                              <p class="text-xs text-secondary mb-0">Roz</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td>                    
-                          <p class="text-xs text-secondary mb-0">Tecnologia</p>
-                        </td>
-                        <td class="align-middle text-center text-sm">
-                          <p class="text-xs text-secondary mb-0">000.000.000-10</p>
-                        </td>
-                        <td class="align-middle text-center">
-                          <span class="text-secondary text-xs font-weight-bold">roz@infoquik.com</span>
-                        </td>
-                        <td class="align-middle">
-                          <a href="paginaTreinamento.html" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                            data-original-title="Edit user">
-                            Editar
-                          </a>
-                        </td>
-                      </tr>
+                  <tbody id="tb-treinadores">
+
                   </tbody>
                 </table>
               </div>
@@ -248,37 +256,41 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Cadastrar Usuários</h6>
-              <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Cadastrar Usuários</button>
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#FuncionarioModal" data-bs-whatever="@mdo">Cadastrar Usuários</button>
+              <div class="modal fade" id="FuncionarioModal" tabindex="-1" aria-labelledby="FuncionarioModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Usuário</h1>
+                      <h1 class="modal-title fs-5" id="FuncionarioModalLabel">Cadastrar Usuário</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <form>
                         <div class="mb-3">
-                          <label for="recipient-name" class="col-form-label">Nome</label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <label for="input-nome-usuario" class="col-form-label">Nome</label>
+                          <input type="text" class="form-control" id="input-nome-usuario">
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Departamento</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="input-departamento-usuario" class="col-form-label">Departamento</label>
+                            <input type="text" class="form-control" id="input-departamento-usuario">
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">CPF</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="input-cpf-usuario" class="col-form-label">CPF</label>
+                            <input type="text" class="form-control" id="input-cpf-usuario">
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Email</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="input-email-usuario" class="col-form-label">Email</label>
+                            <input type="text" class="form-control" id="input-email-usuario">
                         </div>
+                        <div class="mb-3">
+                          <label for="inpunt-senha-usuario" class="col-form-label">Senha</label>
+                          <input type="text" class="form-control" id="inpunt-senha-usuario">
+                      </div>
                       </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                      <button type="button" class="btn btn-primary">Enviar</button>
+                      <button type="button" class="btn btn-primary" id="btn-cadastro-usuarios">Enviar</button>
                     </div>
                   </div>
                 </div>
@@ -300,32 +312,8 @@
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"></h6>
-                            <p class="text-xs text-secondary mb-0">James P. Sullivan</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>                    
-                        <p class="text-xs text-secondary mb-0">TI</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <p class="text-xs text-secondary mb-0">100.000.000-00</p>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">jsullivan@gmail.com</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="paginaTreinamento.html" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                          data-original-title="Edit user">
-                          Editar
-                        </a>
-                      </td>
-                    </tr>
+                  <tbody id="tb-funcionarios">
+                    
                   </tbody>
                 </table>
               </div>
@@ -409,6 +397,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script src="../assets/js/cadastro.js"></script>
 </body>
 
 </html>
