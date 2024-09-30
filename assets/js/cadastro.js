@@ -228,7 +228,9 @@ async function listAllTreinadores() {
         const cpf = document.createElement('p');
         cpf.classList.add('text-xs', 'text-secondary', 'mb-0');
 
-        cpf.innerText = [treinador.cpf.slice(0, 3), '.', treinador.cpf.slice(3, 6), '.', treinador.cpf.slice(6, 9), '-', treinador.cpf.slice(-2)].join('');
+        cpf.innerText = [treinador.cpf.slice(0, 3), '.', 
+            treinador.cpf.slice(3, 6), '.', treinador.cpf.slice(6, 9), '-', 
+            treinador.cpf.slice(-2)].join('');
 
         tdCpf.append(cpf);
         row.append(tdCpf);
@@ -246,8 +248,10 @@ async function listAllTreinadores() {
         const editar = document.createElement('td')
         editar.classList.add('align-middle');
         editar.innerHTML = `
-                    <a href="paginaTreinamento.html" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                        data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#EditTreinadorModal" data-bs-whatever="@mdo">
+                    <a href="paginaTreinamento.html" class="text-secondary font-weight-bold text-xs" 
+                        data-toggle="tooltip"
+                        data-original-title="Edit user" data-bs-toggle="modal" 
+                        data-bs-target="#EditTreinadorModal" data-bs-whatever="@mdo">
                         Editar
                     </a>`
 

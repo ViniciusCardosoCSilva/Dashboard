@@ -27,8 +27,6 @@ document.getElementById('form_login').addEventListener('submit', function(event)
         }else{
           console.log(data);
         }
-        
-        
         return response.json();
       })
       .then(data => {
